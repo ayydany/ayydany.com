@@ -442,7 +442,7 @@ body td {
 @font-face {
   font-style: normal;
   font-family: "SpaceMono";
-  src: local("SpaceMono"), url("../lib/SpaceMono/SpaceMono-Regular.ttf") format("truetype");
+  src: local("SpaceMono"), url("../lib/spacemono/SpaceMono-Regular.ttf") format("truetype");
 }
 *,
 *:before,
