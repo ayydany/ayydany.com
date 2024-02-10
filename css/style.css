@@ -439,11 +439,6 @@ body td {
   font-family: "Meslo LG";
   src: local("Meslo LG S"), url("../lib/meslo-LG/MesloLGS-Regular.ttf") format("truetype");
 }
-@font-face {
-  font-style: normal;
-  font-family: "SpaceMono";
-  src: local("SpaceMono"), url("../lib/spacemono/SpaceMono-Regular.ttf") format("truetype");
-}
 *,
 *:before,
 *:after {
@@ -485,13 +480,11 @@ body {
   height: 100%;
   background-color: #1d1f21;
   color: #c9cacc;
-  font-display: swap;
   font-weight: 400;
   font-size: 14px;
-  font-family: "SpaceMono", "Menlo", "Meslo LG", monospace;
+  font-family: "Menlo", "Meslo LG", monospace;
   line-height: 1.725;
   text-rendering: geometricPrecision;
-  flex: 1;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
@@ -690,9 +683,15 @@ body {
     top: 77px;
     right: 1rem;
     display: inline-block;
+    text-align: center;
   }
   #header #nav ul.responsive li {
     display: block;
+  }
+  #header #nav ul a[aria-label="Menu"] {
+    display: inline-block;
+    min-width: 48px;
+    min-height: 48px;
   }
   #header #nav li:not(:first-child) {
     padding-top: 1rem;
@@ -1225,9 +1224,6 @@ article .content .caption {
     content: "|";
   }
 }
-body h2 {
-  margin-left: 0.5rem;
-}
 #archive .post-year {
   list-style-type: none;
 }
@@ -1414,7 +1410,7 @@ body h2 {
   font-display: swap;
   font-weight: 400;
   font-size: 11.200000000000001px;
-  font-family: "SpaceMono", "Menlo", "Meslo LG", monospace;
+  font-family: "Menlo", "Meslo LG", monospace;
   line-height: 1.725;
   text-rendering: geometricPrecision;
   text-align: center;
@@ -1584,7 +1580,7 @@ pre {
   border: 1px dotted #908d8d;
   border-radius: 4px;
   font-size: 13px;
-  font-family: "SpaceMono", "Menlo", "Meslo LG", monospace;
+  font-family: "Menlo", "Meslo LG", monospace;
   line-height: 22px;
   -webkit-border-radius: 4px;
 }
@@ -1605,7 +1601,7 @@ code {
   padding: 10px 15px;
   border-radius: 4px;
   background: #212326;
-  font-family: "SpaceMono", "Menlo", "Meslo LG", monospace;
+  font-family: "Menlo", "Meslo LG", monospace;
   -webkit-border-radius: 4px;
 }
 .highlight figcaption {
@@ -1662,4 +1658,7 @@ code {
 }
 .highlight .line {
   height: 22px;
+}
+#header-post #actions {
+  direction: ltr !important;
 }
