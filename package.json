@@ -1,5 +1,5 @@
 {
-  "name": "hexo-site",
+  "name": "ayydany.com",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -9,19 +9,19 @@
     "server": "hexo server"
   },
   "hexo": {
-    "version": "7.2.0"
+    "version": "7.3.0"
   },
   "dependencies": {
-    "hexo": "*",
-    "hexo-deployer-git": "*",
-    "hexo-generator-archive": "*",
-    "hexo-generator-category": "*",
-    "hexo-generator-index": "*",
-    "hexo-generator-tag": "*",
-    "hexo-renderer-ejs": "*",
-    "hexo-renderer-marked": "*",
-    "hexo-renderer-stylus": "*",
-    "hexo-server": "*",
-    "hexo-fontawesome": "*"
+    "hexo": "^7.3.0",
+    "hexo-deployer-git": "^4.0.0",
+    "hexo-fontawesome": "^2.4.0",
+    "hexo-generator-archive": "^2.0.0",
+    "hexo-generator-category": "^2.0.0",
+    "hexo-generator-index": "^4.0.0",
+    "hexo-generator-tag": "^2.0.0",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-marked": "^7.0.0",
+    "hexo-renderer-stylus": "^3.0.1",
+    "hexo-server": "^3.0.0"
   }
 }

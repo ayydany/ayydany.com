@@ -28,13 +28,12 @@ With all this said and done, the recent "Recall" news on Windows, or how it was 
 - **Distro**:
   - The big one! What distro to use? There are so many to choose from. For me, it was pretty straightforward as I already had Arch Linux in mind. It's a pretty barebones distro that allows the user to completely customize it the way they want, which really attracted me to it.
 
-
 ### The Switch
 
 Two days ago, I decided to make the change! The installation went very smoothly. I simply formatted an SSD I had already installed on the PC (it was hosting some Steam games) and installed it there. So I'm currently dual-booting Windows and Linux on my machine under a GRUB boot manager, which has Windows configured on it, so I can go to it whenever I need to.
 
 Regarding Linux, post-install, I had some issues with the compositor, namely how Wayland behaves under NVIDIA GPUs, since I'm using KDE Plasma. But besides that, we're good to go. I even did a quick setup to back up most of my dotfiles using `stow`, which was really simple. I'll probably do another post in a bit explaining how I'm handling those configurations on two different machines and OSes (namely Linux and Mac).
 
-{% asset_img neofetch.png neofetch %}
+{% asset_img desktop.png %}
 
 This journey has just begun, and I'm excited to see where it leads me!
