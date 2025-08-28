@@ -2,7 +2,8 @@
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
-# Site
+# Metadata
+## Site metadata
 title: "ayydany // Daniel Carmo"
 subtitle: "ayydany"
 description: "Always building something new and exciting."
@@ -103,5 +104,6 @@ theme: cactus
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/ayydany/ayydany.com
+  repo: git@github.com:ayydany/ayydany.com.git
   branch: live
+  token: $GITHUB_TOKEN
