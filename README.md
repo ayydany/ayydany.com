@@ -1,38 +1,75 @@
-# ayydany.com - Hexo
+# ayydany.com
 
-## Prerequisites
+This project uses [Hexo](https://hexo.io/) for static site generation and [Gulp](https://gulpjs.com/) to simplify common tasks.
 
-- have npm.js installed (duh)
-- have git installed (duh)
+## Usage
 
-## Quick and easy
+### Install Dependencies
 
-1. Clone this repo:
+```bash
 
-    ```sh
-    $ git clone https://github.com/ayydany/ayydany.com.git
-    ```
+npm install
 
-2. Reinstall npm packages:
+```
 
-    ```sh
-    $ npm install
-    ```
+### Common Gulp Tasks
 
-3. Clone a theme back into folder, currently using cactus:
+- **Development (watch & serve):**
 
-    ```sh
-    $ git clone https://github.com/probberechts/hexo-theme-cactus.git themes/cactus
-    ```
+```bash
+gulp dev
+```
 
-4. Generate hexo & run with the command.
+Runs `hexo generate -w` and `hexo serve` concurrently.
 
-    ```sh
-    $ hexo generate && hexo server
-    ```
+- **Generate static files:**
 
-5. You're good bro
+```bash
+gulp generate
 
-## Special thanks
+```
 
-- Cactus theme (https://github.com/probberechts/hexo-theme-cactus)
+- **Deploy:**
+
+```bash
+gulp deploy
+```
+
+**Note:** For deployment to work, you must set the `GITHUB_TOKEN` environment variable with a valid GitHub token that has permission to push to your repository.
+
+Example:
+
+```bash
+export GITHUB_TOKEN=your_token_here
+gulp deploy
+
+```
+
+- **Serve only:**
+
+```bash
+gulp
+```
+
+(Default task, runs `hexo serve`)
+
+## Manual Hexo Commands
+
+You can still run Hexo commands directly if needed:
+
+```bash
+hexo generate
+hexo serve
+hexo deploy
+```
+
+## Project Structure
+
+- `gulpfile.js`: Gulp tasks for Hexo commands
+- `source/`: Your Hexo content
+- `themes/`: Hexo themes
+- `README.md`: This file
+
+---
+
+Using Gulp makes running Hexo tasks easier and more consistent!

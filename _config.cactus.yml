@@ -22,23 +22,17 @@ nav:
 # (see https://fontawesome.com/icons?d=gallery&s=brands);
 # only 'mail' is an exception.
 social_links:
-  -
-    icon: github
+  - icon: github
     link: https://github.com/ayydany
-  -
-    icon: linkedin
+  - icon: linkedin
     link: https://www.linkedin.com/in/ayydany
-  -
-    icon: twitter
+  - icon: twitter
     link: https://twitter.com/ayyydany
-  -
-    icon: steam
+  - icon: steam
     link: https://steamcommunity.com/id/ayydany
-  -
-    icon: discord
+  - icon: discord
     link: https://discordapp.com/users/116873501150937097
-  -
-    icon: mail
+  - icon: mail
     link: mailto:me@ayydany.com
 
 # Customize the overview with displaying a tagcloud on the index page.
@@ -125,7 +119,7 @@ favicon:
 colorscheme: dark
 
 # Maximal width of the page in rem units.
-page_width: 56
+page_width: 66
 
 ##############################################################################
 # Miscellaneous
@@ -148,7 +142,7 @@ open_graph:
 # Enable MathJax support for Latex
 mathjax:
   enabled: false
-  
+
 # Fill in your Disqus Comments Shortname to enable Disqus comments.
 disqus:
   enabled: false
