@@ -1,4 +1,3 @@
 [submodule "themes/cactus"]
 	path = themes/cactus
 	url = https://github.com/ayydany/hexo-theme-cactus.git
-	branch = test

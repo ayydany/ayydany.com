@@ -100,6 +100,10 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: cactus
 
+theme_config:
+  colorscheme: catppuccin-mocha
+
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:

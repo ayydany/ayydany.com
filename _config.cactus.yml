@@ -120,7 +120,7 @@ favicon:
 colorscheme: catppuccin-mocha
 
 # Maximal width of the page in rem units.
-page_width: 62
+page_width: 64
 
 ##############################################################################
 # Profile Page
@@ -133,7 +133,6 @@ profile_page:
   name: Daniel Carmo
   title: Software Engineer
   width: 56rem
-  tagline: "**🌵 Building resilient Java platforms & shipping fast React apps with Vite.**"
   location: Lisbon, PT
   intro: >
     I lead **Java** + **Spring Boot** platforms in the streaming world, pushing
