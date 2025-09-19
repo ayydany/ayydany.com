@@ -1,8 +1,10 @@
-const gulp = require("gulp");
-const { spawn } = require("child_process");
+import gulp from "gulp";
+import { spawn } from "node:child_process";
+import { rm } from "node:fs/promises";
+import { resolve } from "node:path";
 
 function spawnHexo(command, args = []) {
-  return function (done) {
+  return (done) => {
     const proc = spawn("hexo", [command, ...args], { stdio: "inherit" });
     proc.on("close", (code) => {
       done(
@@ -14,12 +16,25 @@ function spawnHexo(command, args = []) {
   };
 }
 
-gulp.task("generate-watch", spawnHexo("generate", ["-w"]));
-gulp.task("serve", spawnHexo("serve"));
+const artifacts = [".deploy_git", "node_modules", "public", "db.json"];
 
-gulp.task("dev", gulp.parallel("generate-watch", "serve"));
+async function removeArtifacts() {
+  for (const target of artifacts) {
+    const fullPath = resolve(process.cwd(), target);
+    await rm(fullPath, { recursive: true, force: true });
+    console.log(`Removed ${target}`);
+  }
+}
 
-gulp.task("generate", spawnHexo("generate"));
-gulp.task("deploy", spawnHexo("deploy"));
+const cleanHexo = spawnHexo("clean");
 
-gulp.task("default", gulp.series("serve"));
+export const generateWatch = spawnHexo("generate", ["-w"]);
+export const serve = spawnHexo("serve");
+
+export const dev = gulp.parallel(generateWatch, serve);
+
+export const generate = spawnHexo("generate");
+export const deploy = spawnHexo("deploy");
+export const clean = gulp.series(cleanHexo, removeArtifacts);
+
+export default gulp.series(serve);

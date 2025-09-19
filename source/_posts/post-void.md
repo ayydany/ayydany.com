@@ -31,6 +31,4 @@ In terms of difficulty, it's pretty average. I consider myself average at fps ga
 
 Overall it's a very fun small game, with some amazing (and *trippy*) visual, which I'm happy to recommend to anyone who's up for the challenge.
 
-**Post Void** {% fa_inline star fas %} {% fa_inline star fas %} {% fa_inline star fas %} {% fa_inline star far %} {% fa_inline star far %}
-
-{% fa_css %}
+**Post Void** ⭐️ ⭐️ ⭐️ ☆ ☆

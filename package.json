@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "build": "hexo generate",
-    "clean": "hexo clean",
+    "clean": "gulp clean",
+    "clean:hexo": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server"
   },
@@ -15,7 +16,6 @@
     "gulp": "^5.0.1",
     "hexo": "^8.0.0",
     "hexo-deployer-git": "^4.0.0",
-    "hexo-fontawesome": "^2.4.0",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
     "hexo-generator-index": "^4.0.0",
