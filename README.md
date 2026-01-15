@@ -12,6 +12,10 @@ npm install
 
 ```
 
+### VS Code tasks
+
+The repo includes `.vscode/tasks.json` so you can run the gulp tasks from `Terminal > Run Task…` (they call `npx gulp <task>`).
+
 ### Common Gulp Tasks
 
 - **Development (watch & serve):**
@@ -29,6 +33,14 @@ gulp generate
 
 ```
 
+- **Update dependencies (ncu -u + npm install):**
+
+```bash
+gulp deps
+```
+
+Requires `npm-check-updates` (`ncu`) to be installed (`npm i -g npm-check-updates`), otherwise the task will error.
+
 - **Deploy:**
 
 ```bash
@@ -43,6 +55,12 @@ Example:
 export GITHUB_TOKEN=your_token_here
 gulp deploy
 
+```
+
+- **Clean Hexo artifacts and generated files:**
+
+```bash
+gulp clean
 ```
 
 - **Serve only:**
@@ -62,6 +80,17 @@ hexo generate
 hexo serve
 hexo deploy
 ```
+
+### Create new content
+
+```bash
+hexo new post "My Post Title"
+hexo new page "about"
+hexo new draft "idea-note"
+hexo new review "Game Title"   # uses scaffolds/review.md
+```
+
+Move drafts to `source/_posts` (or run `hexo publish <draft>`) when ready.
 
 ## Project Structure
 

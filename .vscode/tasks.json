@@ -1,0 +1,199 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Gulp: dev",
+      "type": "shell",
+      "command": "npx",
+      "args": ["gulp", "dev"],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Run hexo generate -w and hexo serve together",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "Gulp: serve",
+      "type": "shell",
+      "command": "npx",
+      "args": ["gulp", "serve"],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "detail": "Serve site with hexo serve (no watcher)",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "Gulp: generate",
+      "type": "shell",
+      "command": "npx",
+      "args": ["gulp", "generate"],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "detail": "Build static files via hexo generate",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "Gulp: deploy",
+      "type": "shell",
+      "command": "npx",
+      "args": ["gulp", "deploy"],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "detail": "Deploy via hexo deploy (uses GITHUB_TOKEN)",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "Gulp: clean",
+      "type": "shell",
+      "command": "npx",
+      "args": ["gulp", "clean"],
+      "problemMatcher": [],
+      "group": {
+        "kind": "clean",
+        "isDefault": false
+      },
+      "detail": "Clean hexo cache/public and extra artifacts",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "Gulp: deps (ncu -u + npm install)",
+      "type": "shell",
+      "command": "npx",
+      "args": ["gulp", "deps"],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "detail": "Update deps with ncu -u then npm install",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "Hexo: new post",
+      "type": "shell",
+      "command": "npx",
+      "args": ["hexo", "new", "post", "${input:postTitle}"],
+      "problemMatcher": [],
+      "detail": "Create a new post using scaffolds/post.md",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "Hexo: new page",
+      "type": "shell",
+      "command": "npx",
+      "args": ["hexo", "new", "page", "${input:pageTitle}"],
+      "problemMatcher": [],
+      "detail": "Create a new page using scaffolds/page.md",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "Hexo: new draft",
+      "type": "shell",
+      "command": "npx",
+      "args": ["hexo", "new", "draft", "${input:draftTitle}"],
+      "problemMatcher": [],
+      "detail": "Create a new draft using scaffolds/draft.md",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "Hexo: new review",
+      "type": "shell",
+      "command": "npx",
+      "args": ["hexo", "new", "review", "${input:reviewTitle}"],
+      "problemMatcher": [],
+      "detail": "Create a new review using scaffolds/review.md",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "Hexo: publish draft",
+      "type": "shell",
+      "command": "npx",
+      "args": ["hexo", "publish", "${input:draftToPublish}"],
+      "problemMatcher": [],
+      "detail": "Publish a draft from source/_drafts to _posts",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "postTitle",
+      "type": "promptString",
+      "description": "Post title"
+    },
+    {
+      "id": "pageTitle",
+      "type": "promptString",
+      "description": "Page title"
+    },
+    {
+      "id": "draftTitle",
+      "type": "promptString",
+      "description": "Draft title"
+    },
+    {
+      "id": "reviewTitle",
+      "type": "promptString",
+      "description": "Review title"
+    },
+    {
+      "id": "draftToPublish",
+      "type": "promptString",
+      "description": "Draft name to publish (without path)"
+    }
+  ]
+}
