@@ -17,6 +17,6 @@
     "hexo-renderer-marked": "^7.0.1",
     "hexo-renderer-stylus": "^3.0.1",
     "hexo-server": "^3.0.0",
-    "hexo-theme-cactus": "github:ayydany/hexo-theme-cactus#889678c143394f83db3dac5f4006f62ff4c0c53e"
+    "hexo-theme-cactus": "github:ayydany/hexo-theme-cactus#master"
   }
 }
