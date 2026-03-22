@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "ms-vscode.live-server",
+    "davidanson.vscode-markdownlint",
+    "esbenp.prettier-vscode",
+    "editorconfig.editorconfig"
+  ]
+}
