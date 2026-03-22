@@ -14,4 +14,4 @@ Away from the keyboard I'm usually chasing calisthenics goals, hopping between h
 
 That’s me. Dive in, explore, and feel free to say hi.
 
-<small>[View my CV](/cv/)</small>
+Open to connecting? I’d love to share my CV and discuss how my skills could be a valuable asset to your project. Reach out directly to me [here](mailto:me@ayydany.com).
