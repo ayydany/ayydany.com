@@ -13,9 +13,8 @@ projects_url: /archives/
 # languages/*.yml
 nav:
   home: /
+  archives: /archives/
   about: /about/
-  articles: /archives/
-  CV: /cv/
 
 
 # Links to your social media accounts.

@@ -13,3 +13,5 @@ These days I’m deep in distributed systems work—designing resilient pipeline
 Away from the keyboard I'm usually chasing calisthenics goals, hopping between hidden cafés, teaming up for co-op RPGs, or swapping indie playlists with my girlfriend.
 
 That’s me. Dive in, explore, and feel free to say hi.
+
+<small>[View my CV](/cv/)</small>
