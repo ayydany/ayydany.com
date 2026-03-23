@@ -3,12 +3,17 @@
        "name":"Olympics",
        "url":"https://olympics.ayydany.com/",
        "desc":"Dive into Olympic history and trends with an interactive D3.js visualization, exploring medals, countries, and more."
-    },    
+    },
+    {
+        "name":"Cactus Catppuccin",
+        "url":"https://github.com/ayydany/hexo-theme-cactus-catppuccin",
+        "desc":"A personal fork of the Cactus theme for Hexo, featuring Catppuccin Mocha colors and custom UI components."
+    },
     {
       "name":"iRave (2012)",
       "url":"https://irave.ayydany.com/",
       "desc":"Experience music festivals like never before with this innovative smartwatch app mockup (designed in 2012)"
-   },
+    },
     {
        "name":"Grand Hero Farmer",
        "url":"https://github.com/DanyBoss/GrandHeroFarmer",
@@ -23,11 +28,10 @@
         "name":"thankful",
         "url":"https://thankful.ayydany.com/",
         "desc":"Say \"thanks\" and find what you need with a smile! This cute startpage boasts a \"smartish\" searchbar for effortless browsing."
-     },
-
+    },
     {
         "name":"simpsonwave",
         "url":"https://simpsonwave.ayydany.com/",
         "desc":"Explore the vibrant aesthetics and nostalgia of vaporwave through this unique website experience"
-     }
+    }
 ]
