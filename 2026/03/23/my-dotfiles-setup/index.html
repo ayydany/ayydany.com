@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <!-- so meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=5"
+  />
+  <meta name="description" content="The Struggle is RealLet’s be honest for a second: managing multiple computers is a nightmare. For the longest time, I was living a double life. I had my Arch Linux workstation (KDE Plasma for the win!">
+<meta property="og:type" content="article">
+<meta property="og:title" content="My Dotfiles Setup: A Tale of Two Systems">
+<meta property="og:url" content="https://ayydany.com/2026/03/23/my-dotfiles-setup/index.html">
+<meta property="og:site_name" content="ayydany &#x2F;&#x2F; Daniel Carmo">
+<meta property="og:description" content="The Struggle is RealLet’s be honest for a second: managing multiple computers is a nightmare. For the longest time, I was living a double life. I had my Arch Linux workstation (KDE Plasma for the win!">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-03-23T15:00:00.000Z">
+<meta property="article:modified_time" content="2026-03-23T13:12:18.225Z">
+<meta property="article:author" content="ayydany">
+<meta property="article:tag" content="automation">
+<meta property="article:tag" content="dotfiles">
+<meta property="article:tag" content="thoughts">
+<meta name="twitter:card" content="summary">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+     
+  <link
+    rel="icon"
+    type="image/png"
+    href="/assets/favicon-192x192.png"
+    sizes="192x192"
+  />
+     
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/assets/apple-touch-icon.png"
+  />
+    
+  <!-- title -->
+  
+  <title>ayydany // My Dotfiles Setup: A Tale of Two Systems</title>
+  <!-- async scripts -->
+  <!-- Google Analytics -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119587985-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-119587985-1');
+  </script>
+
+ <!-- Umami Analytics -->
+
+
+  <!-- styles -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!-- persian styles -->
+  
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Recursive:wght@300..1000&display=swap"
+    rel="stylesheet"
+  />
+  <!-- rss -->
+   
+  <!-- mathjax -->
+  
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+    
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/projects/">Projects</a></li><!--
+     --><!--
+       --><li><a href="/writing/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2025/01/27/a-year-in-linux/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+    </span>
+    <br/>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Struggle-is-Real"><span class="toc-number">1.</span> <span class="toc-text">The Struggle is Real</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Enter-the-Unified-Repo"><span class="toc-number">2.</span> <span class="toc-text">Enter the Unified Repo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Magic-of-GNU-Stow"><span class="toc-number">3.</span> <span class="toc-text">The Magic of GNU Stow</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Fun-Fact-The-Overkill-Script"><span class="toc-number">3.1.</span> <span class="toc-text">Fun Fact: The Overkill Script</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Crossing-the-OS-Divide"><span class="toc-number">4.</span> <span class="toc-text">Crossing the OS Divide</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        My Dotfiles Setup: A Tale of Two Systems
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">ayydany</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2026-03-23T15:00:00.000Z" class="dt-published" itemprop="datePublished">23/03/2026</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/automation/" rel="tag">automation</a>, <a class="p-category" href="/tags/dotfiles/" rel="tag">dotfiles</a>, <a class="p-category" href="/tags/thoughts/" rel="tag">thoughts</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h2 id="The-Struggle-is-Real"><a href="#The-Struggle-is-Real" class="headerlink" title="The Struggle is Real"></a>The Struggle is Real</h2><p>Let’s be honest for a second: managing multiple computers is a nightmare. For the longest time, I was living a double life. I had my Arch Linux workstation (KDE Plasma for the win!) and my MacBook for when I needed to actually be mobile. </p>
+<p>The problem? They felt like two completely different strangers. </p>
+<p>I’d hop onto the Mac, try to use a Zsh alias I literally <em>just</em> made on Linux, and… nothing. Command not found. Total silence. Then I’d spend twenty minutes manually copying files over like it was 2005. I had “final” config files scattered across random GitHub repos and it was, frankly, a mess.</p>
+<h2 id="Enter-the-Unified-Repo"><a href="#Enter-the-Unified-Repo" class="headerlink" title="Enter the Unified Repo"></a>Enter the Unified Repo</h2><p>I finally reached a breaking point. I didn’t need more repos; I needed a system. So, I did what any self-respecting “data freak” would do: I consolidated everything. </p>
+<p>Now, I have one single <code>dotfiles</code> repository that handles everything. Instead of a giant pile of hidden files, I organized it by “packages” and “profiles.” </p>
+<p>It looks a bit like this:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">dotfiles/</span><br><span class="line">├── packages/</span><br><span class="line">│   ├── arch-kde/</span><br><span class="line">│   │   └── zsh/</span><br><span class="line">│   ├── macos/</span><br><span class="line">│   │   └── zsh/</span><br><span class="line">│   └── shared/</span><br><span class="line">│       └── vim/</span><br><span class="line">└── install.py</span><br></pre></td></tr></table></figure>
+
+<p>The “shared” stuff is the real MVP here. My Vim config doesn’t care what OS I’m on, so why should I manage it twice?</p>
+<h2 id="The-Magic-of-GNU-Stow"><a href="#The-Magic-of-GNU-Stow" class="headerlink" title="The Magic of GNU Stow"></a>The Magic of GNU Stow</h2><p>Now, how do these files actually get where they need to go? <strong>GNU Stow</strong>. </p>
+<p>I know, I know—it sounds like some dusty old server tool, but it’s actually pure magic. It’s basically a symlink manager. You tell it where your config is, and it “stows” it into your home directory. The system <em>thinks</em> the file is right there in <code>~/</code>, but the real version is safely tucked away in my Git repo.</p>
+<p>A simple stow command looks like this:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Stow the zsh package into the home directory</span></span><br><span class="line">stow -t ~ zsh</span><br></pre></td></tr></table></figure>
+
+<p>Suddenly, my <code>.zshrc</code> is exactly where it needs to be. Any change I make is instantly tracked. No more manual copying, no more “config_v2_final_REALLY_FINAL.conf”. </p>
+<h3 id="Fun-Fact-The-Overkill-Script"><a href="#Fun-Fact-The-Overkill-Script" class="headerlink" title="Fun Fact: The Overkill Script"></a>Fun Fact: The Overkill Script</h3><p>Because I can’t just leave things simple, I wrote a custom <code>install.py</code> script to wrap around Stow. It’s a bit overkill, honestly. It uses <strong>multi-threading</strong> to check for conflicts and stow packages in parallel. </p>
+<p>Here’s a peek at how I handle the parallel execution:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> concurrent.futures.ThreadPoolExecutor() <span class="keyword">as</span> executor:</span><br><span class="line">    futures = [</span><br><span class="line">        executor.submit(simulate_package, stow_args, action_args, pkg, cwd)</span><br><span class="line">        <span class="keyword">for</span> pkg <span class="keyword">in</span> packages</span><br><span class="line">    ]</span><br><span class="line">    <span class="comment"># Wait for all simulations to finish...</span></span><br></pre></td></tr></table></figure>
+
+<p>Why? Because waiting three seconds for a symlink is three seconds too long! </p>
+<p>It also keeps me honest by checking if I actually have my favorite tools installed—stuff like <code>zoxide</code> (my replacement for <code>cd</code>), <code>thefuck</code> (for fixing typos), and <code>fzf</code>.</p>
+<h2 id="Crossing-the-OS-Divide"><a href="#Crossing-the-OS-Divide" class="headerlink" title="Crossing the OS Divide"></a>Crossing the OS Divide</h2><p>The real trick was making Arch and macOS play nice together. I didn’t want a massive, messy <code>.zshrc</code> full of “if this is a Mac, do this” checks. That’s just trading one headache for another.</p>
+<p>Instead, I use profiles. My custom <code>install.py</code> script (which I’m pretty proud of, badum-tssss!) detects which machine I’m on and only stows the packages that actually belong there. </p>
+
+
+<p>Now, whether I’m at my desk on Arch or at a cafe with my MacBook, my environment feels identical.<br> My aliases work, my prompt is the same, and I can actually get back to work instead of fighting with my terminal.</p>
+<p>It took a bit of setup, but man, was it worth it. If you’re still manually copying configs… do yourself a favor and check out Stow!</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/projects/">Projects</a></li>
+        
+          <li><a href="/writing/">Writing</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Struggle-is-Real"><span class="toc-number">1.</span> <span class="toc-text">The Struggle is Real</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Enter-the-Unified-Repo"><span class="toc-number">2.</span> <span class="toc-text">Enter the Unified Repo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Magic-of-GNU-Stow"><span class="toc-number">3.</span> <span class="toc-text">The Magic of GNU Stow</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Fun-Fact-The-Overkill-Script"><span class="toc-number">3.1.</span> <span class="toc-text">Fun Fact: The Overkill Script</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Crossing-the-OS-Divide"><span class="toc-number">4.</span> <span class="toc-text">Crossing the OS Divide</span></a></li></ol>
+      </div>
+    
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        
+          <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2019-2026
+    ayydany
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/projects/">Projects</a></li><!--
+     --><!--
+       --><li><a href="/writing/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+        
+    </div>
+    <!-- styles -->
+
+
+ 
+  <link
+    rel="preload"
+    href="/lib/font-awesome/css/all.min.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript
+    ><link
+      rel="stylesheet"
+      href="/lib/font-awesome/css/all.min.css"
+  /></noscript>
+
+
+    <!-- jquery -->
+
+  
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+
+
+
+<!-- clipboard -->
+
+  
+    
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
