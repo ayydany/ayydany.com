@@ -1,8 +1,12 @@
 ---
-title: "ayydany - About"
+title: "About"
 date: 2022-07-08 21:04:53
 layout: page
 ---
+
+<div class="callout">
+<strong>Open to connecting?</strong> I’d love to share my CV and discuss how my skills could be a valuable asset to your project. Reach out directly to me <a href="mailto:me@ayydany.com">here</a>.
+</div>
 
 Olá! (Hey!) I'm Daniel.
 
@@ -13,5 +17,3 @@ These days I’m deep in distributed systems work—designing resilient pipeline
 Away from the keyboard I'm usually chasing calisthenics goals, hopping between hidden cafés, teaming up for co-op RPGs, or swapping indie playlists with my girlfriend.
 
 That’s me. Dive in, explore, and feel free to say hi.
-
-Open to connecting? I’d love to share my CV and discuss how my skills could be a valuable asset to your project. Reach out directly to me [here](mailto:me@ayydany.com).
