@@ -108,7 +108,5 @@ theme_config:
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo:
-    url: https://github.com/ayydany/ayydany.com.git
-    branch: live
-    token: $GITHUB_TOKEN
+  repo: https://github.com/ayydany/ayydany.com.git
+  branch: live
