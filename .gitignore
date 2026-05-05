@@ -12,7 +12,9 @@
 *.vsix
 
 .deploy_git
-.github
+.github/*
+!.github/workflows/
+!.github/workflows/**
 node_modules
 public
 db.json
