@@ -1,4 +1,4 @@
-# GEMINI.md (ayydany.com)
+# AGENTS.md (ayydany.com)
 
 This repository contains the source code for my personal portfolio website, built with **Hexo** and the **Cactus** theme.
 
