@@ -10,13 +10,13 @@ tags:
   - migration
 ---
 
-It’s been a while since I first built my **Olympics Visualization** project. Back then, it was a pure JavaScript application powered by **jQuery** and **D3.js**. While it served its purpose well, the codebase had become increasingly difficult to maintain as I added more features. 
+It’s been a while since I first built my **Olympics Visualization** project. Back then, it was a pure JavaScript application powered by **jQuery** and **D3.js**. While it served its purpose well, the codebase had become increasingly difficult to maintain as I added more features.
 
 Recently, I decided it was time for a complete overhaul. I’ve migrated the entire project to a modern stack: **React**, **TypeScript**, and **Bun**, following the **Bulletproof React** architecture.
 
 ## Why the Migration?
 
-The original version was a classic "spaghetti" of jQuery selectors and manual DOM manipulations. Adding a new chart or changing the state (like the selected year or country) required carefully syncing multiple parts of the application. 
+The original version was a classic "spaghetti" of jQuery selectors and manual DOM manipulations. Adding a new chart or changing the state (like the selected year or country) required carefully syncing multiple parts of the application.
 
 By moving to React, I gained:
 - **Declarative UI:** The view automatically stays in sync with the state.
@@ -26,7 +26,7 @@ By moving to React, I gained:
 
 ## The Architecture: Bulletproof React
 
-I decided to follow the **Bulletproof React** pattern to keep the project organized and scalable. Instead of a flat `components/` folder, I grouped functionality into "features." 
+I decided to follow the **Bulletproof React** pattern to keep the project organized and scalable. Instead of a flat `components/` folder, I grouped functionality into "features."
 
 For this project, the core feature is the **Dashboard**, which houses all the visualizations:
 - `src/features/dashboard/components/Worldmap.tsx`
@@ -47,13 +47,13 @@ For the **Worldmap**, I used a custom **D3 Mercator projection**. This allowed m
 
 ## State Management with Zustand
 
-Handling the "drill-down" logic (Sport → Discipline → Event) and multi-country selection (up to 4 countries) was one of the most complex parts of the original app. 
+Handling the "drill-down" logic (Sport → Discipline → Event) and multi-country selection (up to 4 countries) was one of the most complex parts of the original app.
 
 With **Zustand**, I created a clean `useYearStore` that handles all of this globally. I even implemented a "Ctrl + Click" feature on the map to quickly focus on a single country, clearing all other selections.
 
 ## Better Tooltips with React Portals
 
-The old version used `d3-tip`, which was sometimes buggy with positioning. In the new version, I built a custom **Tooltip component using React Portals**. 
+The old version used `d3-tip`, which was sometimes buggy with positioning. In the new version, I built a custom **Tooltip component using React Portals**.
 
 The tooltip is rendered at the document body level, ensuring it never gets cut off by container boundaries. I also stylized it with **Catppuccin** colors and added rich HTML content, including gold, silver, and bronze medal icons (🥇🥈🥉) to match the original's aesthetic.
 
