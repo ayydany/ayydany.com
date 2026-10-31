@@ -7,6 +7,7 @@ A collection of experiments, tools, and visual projects I've built over the year
 
 ### Open Source
 - **[Cactus Catppuccin](https://github.com/ayydany/hexo-theme-cactus-catppuccin)**: A personal Hexo theme fork with Catppuccin Mocha colors and custom UI components.
+- **[Wayfinder](https://wayfinder.ayydany.com/)**: A work-in-progress one-stop finder for the best deals.
 
 ### Data & Visualization
 - **[Olympics](https://olympics.ayydany.com/)**: Dive into Olympic history and trends with an interactive D3.js visualization, exploring medals, countries, and more.

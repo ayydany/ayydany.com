@@ -1,5 +1,10 @@
 [
     {
+       "name":"Wayfinder",
+       "url":"https://wayfinder.ayydany.com/",
+       "desc":"A work-in-progress one-stop finder for the best deals."
+    },
+    {
        "name":"Olympics",
        "url":"https://olympics.ayydany.com/",
        "desc":"Dive into Olympic history and trends with an interactive D3.js visualization, exploring medals, countries, and more."
@@ -20,18 +25,8 @@
        "desc":"Conquer resource farming at lightning speed with this bot application - it's faster than light!"
     },
     {
-       "name":"ubiquitous",
-       "url":"https://ubiquitous.ayydany.com/",
-       "desc":"Minimalism meets functionality in this clean and efficient startpage design. Get organized in style."
-    },
-    {
         "name":"thankful",
         "url":"https://thankful.ayydany.com/",
         "desc":"Say \"thanks\" and find what you need with a smile! This cute startpage boasts a \"smartish\" searchbar for effortless browsing."
-    },
-    {
-        "name":"simpsonwave",
-        "url":"https://simpsonwave.ayydany.com/",
-        "desc":"Explore the vibrant aesthetics and nostalgia of vaporwave through this unique website experience"
     }
 ]
