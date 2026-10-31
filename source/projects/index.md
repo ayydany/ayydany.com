@@ -5,6 +5,9 @@ layout: page
 
 A collection of experiments, tools, and visual projects I've built over the years.
 
+### Open Source
+- **[Cactus Catppuccin](https://github.com/ayydany/hexo-theme-cactus-catppuccin)**: A personal Hexo theme fork with Catppuccin Mocha colors and custom UI components.
+
 ### Data & Visualization
 - **[Olympics](https://olympics.ayydany.com/)**: Dive into Olympic history and trends with an interactive D3.js visualization, exploring medals, countries, and more.
 - **[simpsonwave](https://simpsonwave.ayydany.com/)**: Explore the vibrant aesthetics and nostalgia of vaporwave through this unique website experience.

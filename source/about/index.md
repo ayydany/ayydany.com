@@ -5,7 +5,7 @@ layout: page
 ---
 
 <div class="callout">
-<strong>Open to connecting?</strong> I’d love to share my CV and discuss how my skills could be a valuable asset to your project. Reach out directly to me <a href="mailto:me@ayydany.com">here</a>.
+<strong>Open to connecting?</strong> I’d be happy to share my CV and discuss how I could contribute to your company. Reach out directly to me <a href="mailto:me@ayydany.com">here</a>.
 </div>
 
 Olá! (Hey!) I'm Daniel.
@@ -14,6 +14,6 @@ Most folks online know me as **ayydany**, a Portuguese engineer helping streamin
 
 These days I’m deep in distributed systems work—designing resilient pipelines, observability loops, and developer workflows that support live content at scale. On the side I experiment with frontend components, build little productivity tools, and document what I learn along the way.
 
-Away from the keyboard I'm usually chasing calisthenics goals, hopping between hidden cafés, teaming up for co-op RPGs, or swapping indie playlists with my girlfriend.
+Away from the keyboard I'm usually chasing calisthenics goals, hopping between hidden cafés, teaming up for co-op RPGs, or swapping indie playlists.
 
 That’s me. Dive in, explore, and feel free to say hi.
