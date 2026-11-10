@@ -74,8 +74,10 @@ npx gulp themeLink    # symlink themes/cactus -> ../hexo-theme-cactus-catppuccin
 npx gulp dev          # edit the theme; changes are picked up live
 # commit + push in the theme repo, then:
 npx gulp themeUnlink
-npx gulp themeBump    # pin package.json to the theme's latest pushed master (THEME_REF=<ref> to override)
+npx gulp themeBump    # optional: refresh the local pin to the theme's latest master (THEME_REF=<ref> to override)
 ```
+
+CI (build and deploy) always installs the theme's latest `master` itself, so the committed pin only affects local builds. To publish a theme change, push to `master` here or run the Deploy workflow manually.
 
 `gulp deploy` refuses to run while the theme is linked. See `AGENTS.md` for the full loop.
 
