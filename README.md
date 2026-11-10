@@ -43,18 +43,12 @@ Requires `npm-check-updates` (`ncu`) to be installed (`npm i -g npm-check-update
 
 - **Deploy:**
 
-```bash
-gulp deploy
-```
+Pushing to `master` deploys automatically: `.github/workflows/deploy.yml` builds the site and pushes it to the `live` branch with the workflow's `GITHUB_TOKEN`. Pull requests get a build-only check (`.github/workflows/build.yml`).
 
-**Note:** For deployment to work, you must set the `GITHUB_TOKEN` environment variable with a valid GitHub token that has permission to push to your repository.
-
-Example:
+To deploy manually, you need SSH push access to the repo, and the theme must not be linked:
 
 ```bash
-export GITHUB_TOKEN=your_token_here
 gulp deploy
-
 ```
 
 - **Clean Hexo artifacts and generated files:**
@@ -70,6 +64,20 @@ gulp
 ```
 
 (Default task, runs `hexo serve`)
+
+## Theme development
+
+The theme ([`ayydany/hexo-theme-cactus-catppuccin`](https://github.com/ayydany/hexo-theme-cactus-catppuccin)) is pinned in `package.json`. To work on it against this site without pushing anything:
+
+```bash
+npx gulp themeLink    # symlink themes/cactus -> ../hexo-theme-cactus-catppuccin (gitignored)
+npx gulp dev          # edit the theme; changes are picked up live
+# commit + push in the theme repo, then:
+npx gulp themeUnlink
+npx gulp themeBump    # pin package.json to the theme's latest pushed master (THEME_REF=<ref> to override)
+```
+
+`gulp deploy` refuses to run while the theme is linked. See `AGENTS.md` for the full loop.
 
 ## Manual Hexo Commands
 
@@ -96,7 +104,7 @@ Move drafts to `source/_posts` (or run `hexo publish <draft>`) when ready.
 
 - `gulpfile.js`: Gulp tasks for Hexo commands
 - `source/`: Your Hexo content
-- `themes/`: Hexo themes
+- `themes/`: gitignored; only present while the local theme is linked
 - `README.md`: This file
 
 ---
