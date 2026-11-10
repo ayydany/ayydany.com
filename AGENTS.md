@@ -24,10 +24,11 @@ This repository contains the source code for my personal portfolio website, buil
 
 - `.github/workflows/build.yml`: build-only check on pull requests.
 - `.github/workflows/deploy.yml`: builds and deploys to `live` on every push to `master`.
+- **Both workflows build with the theme's latest `master`**, not the committed pin. After `npm ci` they run `npx gulp themeBump` (in the runner only; nothing is committed back). So whatever is on theme `master` ships on the next site deploy, and the committed pin only affects local builds.
 
 ## 🎨 Theme Development Loop
 
-The theme is an npm dependency pinned to a commit SHA in `package.json`. **Pushing to `master` here deploys to production**, so do not iterate on theme changes by pushing theme commits and re-pinning each one. Iterate locally, then pin once:
+The theme is an npm dependency pinned to a commit SHA in `package.json`, but CI always builds with the theme's latest `master` (see CI above). **Theme `master` is effectively production**: it goes live on the next site deploy. So iterate locally and only merge working theme changes:
 
 1. **Link** the local checkout: `npx gulp themeLink`
    - Creates the gitignored symlink `themes/cactus -> ../hexo-theme-cactus-catppuccin`. Hexo prefers `themes/<name>/` over `node_modules/hexo-theme-<name>/`, so the local theme overrides the pinned one. `package.json` and the lockfile are not touched.
@@ -36,11 +37,10 @@ The theme is an npm dependency pinned to a commit SHA in `package.json`. **Pushi
 3. **Verify the theme** in its own repo: `npm test` and `npm run lint`.
 4. **Commit and push** the theme changes from the theme repo, using its own branch/PR flow.
 5. **Unlink**: `npx gulp themeUnlink`
-6. **Pin** the pushed commit: `npx gulp themeBump`
-   - Defaults to the theme's remote `master`. Use `THEME_REF=<branch-or-sha>` to choose another.
-   - Then run `npx gulp generate` to check the site against the pinned theme, and commit `package.json` and `package-lock.json` in a single `chore(theme): ...` commit.
+6. **Optional: refresh the local pin** with `npx gulp themeBump` so local builds match what CI deploys. Defaults to the theme's remote `master`; `THEME_REF=<branch-or-sha>` picks another. Commit `package.json` and `package-lock.json` together as one `chore(theme): ...` commit. CI doesn't need this.
+   - To publish a theme change, push any commit to site `master` or run the Deploy workflow manually (`gh workflow run deploy.yml`).
 
 Rules for agents:
-- Make one pin commit per batch of theme work, not one per theme commit.
+- Don't make pin commits just to get a theme change deployed. CI already uses the latest theme.
 - Never commit `themes/` and never deploy while linked (the `deploy` task enforces this).
 - Check `test -L themes/cactus` before assuming which theme build is in use.
