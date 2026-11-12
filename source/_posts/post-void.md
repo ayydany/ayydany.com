@@ -1,8 +1,9 @@
 ---
-title: Mushrooms Trip - Post Void 
+title: 'Mushrooms Trip - Post Void'
 date: 2024-01-10 02:03:24
+tags:
+  - review
 layout: post
-tags: reviews
 ---
 
 Let me start by noting that I've been holding out on this review for a *very* long time. Not quite sure why it took me too long, it's a pretty simple game (although a bit psychedelic).
