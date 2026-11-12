@@ -2,6 +2,7 @@ import gulp from "gulp";
 import { spawn } from "node:child_process";
 import { access, lstat, mkdir, readlink, rm, rmdir, symlink } from "node:fs/promises";
 import { join, resolve } from "node:path";
+import { syncVault, vaultSyncConfig } from "./tools/vault-sync.mjs";
 
 function runCommand(command, args = [], options = {}) {
   return new Promise((resolveCommand, reject) => {
@@ -164,5 +165,25 @@ export async function themeBump() {
   await runCommand("npm", ["install", `hexo-theme-cactus@github:${themeRepo}#${shortSha}`]);
   console.log(`Pinned hexo-theme-cactus to ${themeRepo}#${shortSha}`);
 }
+
+// Obsidian vault -> Hexo posts (see tools/vault-sync.mjs).
+// VAULT_DIR / VAULT_POSTS_DIR override the default vault location.
+export async function vaultSync() {
+  await syncVault(vaultSyncConfig());
+}
+
+function vaultSyncWatch() {
+  const { postsDir, attachmentDirs } = vaultSyncConfig();
+  const globs = [join(postsDir, "*.md"), ...attachmentDirs.slice(0, 2).map((dir) => join(dir, "*"))];
+  gulp.watch(globs, { ignoreInitial: true }, function resync() {
+    return syncVault(vaultSyncConfig()).catch((error) => console.error(error.message));
+  });
+}
+
+// Live preview: re-sync on every vault save and serve drafts too.
+export const preview = gulp.series(
+  vaultSync,
+  gulp.parallel(vaultSyncWatch, spawnHexo("server", ["--draft"]))
+);
 
 export default gulp.series(serve);

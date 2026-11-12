@@ -18,7 +18,13 @@ This repository contains the source code for my personal portfolio website, buil
 | **Develop** | `npx gulp dev` | Runs `hexo generate -w` and `hexo server` together. |
 | **Generate** | `npx gulp generate` | Builds the static site into `public/`. |
 | **Deploy** | `npx gulp deploy` | Deploys to the `live` branch. Normally CI does this on push to `master`. Refuses to run while the theme is linked. |
-| **New Post** | `npx hexo new post "Title"` | Creates a new blog post in `source/_posts/`. |
+| **New Post** | `npx hexo new post "Title"` | Creates a new blog post in `source/_posts/`. Prefer writing in the vault (below). |
+| **Vault Sync** | `npx gulp vaultSync` | Syncs Obsidian vault posts with a `status` into `source/_drafts` / `source/_posts`. |
+| **Preview** | `npx gulp preview` | Vault sync in watch mode plus `hexo server --draft`. |
+
+## ✍️ Vault Posts
+
+Posts synced from the Obsidian vault (`tools/vault-sync.mjs`, listed in `vault-sync.json`) are generated files: edit the vault note, not `source/_posts/<slug>.md`, or the next sync overwrites it. `source/_drafts/` is gitignored and generated. See README "Writing posts in Obsidian".
 
 ## ✅ CI
 

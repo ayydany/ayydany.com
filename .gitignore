@@ -21,3 +21,6 @@ db.json
 
 # Local theme checkout symlink (npx gulp themeLink)
 themes/
+
+# Vault drafts (npx gulp vaultSync); they live in the Obsidian vault
+source/_drafts/

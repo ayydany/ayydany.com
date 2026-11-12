@@ -65,6 +65,29 @@ gulp
 
 (Default task, runs `hexo serve`)
 
+## Writing posts in Obsidian
+
+Posts are written in the Obsidian vault (`~/Obsidian/20 Active Efforts/Personal/ayydany.com/Posts`) and synced one way into `source/`. A note joins the sync once its frontmatter has a `status`:
+
+```yaml
+title: "Post title"
+slug: post-title              # URL and file name: source/_posts/post-title.md
+status: draft                 # draft -> source/_drafts (gitignored), published -> source/_posts
+date: "2026-11-12T10:00:00"   # required when published
+site_tags: [linux, obsidian]  # becomes the Hexo `tags`
+```
+
+```bash
+npx gulp preview     # sync, watch the vault, and serve drafts at http://localhost:4000
+npx gulp vaultSync   # one-off sync
+```
+
+- `![[image.png|caption]]` and `![alt](attachments/image.png)` become `{% asset_img %}`; images are looked up in `Posts/attachments/`, then `99 Attachments/`.
+- `[[Other Post]]` becomes a `{% post_link %}` when that note is synced; otherwise plain text. `%% comments %%` are dropped.
+- The site wins: an existing post is only overwritten once it is listed in `vault-sync.json` (adopted automatically when the vault note produces identical output).
+- Publishing stays manual: set `status: published`, run the sync, review `git diff`, commit, and push to `master`.
+- `VAULT_DIR` and `VAULT_POSTS_DIR` override the vault paths.
+
 ## Theme development
 
 The theme ([`ayydany/hexo-theme-cactus-catppuccin`](https://github.com/ayydany/hexo-theme-cactus-catppuccin)) is pinned in `package.json`. To work on it against this site without pushing anything:
